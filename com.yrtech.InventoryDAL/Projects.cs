@@ -21,6 +21,5 @@ namespace com.yrtech.InventoryDAL
         public string Year { get; set; }
         public string Quarter { get; set; }
         public Nullable<int> OrderNO { get; set; }
-        public Nullable<bool> DeployChk { get; set; }
     }
 }

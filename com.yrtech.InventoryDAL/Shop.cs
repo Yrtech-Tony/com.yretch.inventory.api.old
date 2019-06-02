@@ -18,9 +18,7 @@ namespace com.yrtech.InventoryDAL
         public string ShopName { get; set; }
         public string InUserID { get; set; }
         public Nullable<System.DateTime> InDateTime { get; set; }
-        public Nullable<bool> UseChk { get; set; }
         public string AreaCode { get; set; }
         public string Password { get; set; }
-        public Nullable<bool> LoginSuccessChk { get; set; }
     }
 }

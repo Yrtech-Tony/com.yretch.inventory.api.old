@@ -23,9 +23,9 @@ namespace com.yrtech.InventoryAPI.DTO
         public string SaleFlag { get; set; }
         public string VinPhotoName { get; set; }
         public string SaleInvoicePhotoName { get; set; }
-        public string CarBackPhotoName { get; set; }
+        public string CarTypePhotoName { get; set; }
         public string Remark { get; set; }
-        public bool AddChk { get; set; }
+        public string AddChk { get; set; }
         public string ModifyUserId { get; set; }
         public DateTime ModifyDateTime { get; set; }
         public string InUserID { get; set; }

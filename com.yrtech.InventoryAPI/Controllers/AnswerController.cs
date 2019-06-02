@@ -27,7 +27,7 @@ namespace com.yrtech.SurveyAPI.Controllers
         {
             try
             {
-                List<AnswerDto> answerList = answerService.GetShopAnswerList(projectCode, shopCode, allChk, vinCode);
+                List<Answer> answerList = answerService.GetShopAnswerList(projectCode, shopCode, allChk, vinCode);
                 return new APIResult() { Status = true, Body = CommonHelper.Encode(answerList) };
             }
             catch (Exception ex)

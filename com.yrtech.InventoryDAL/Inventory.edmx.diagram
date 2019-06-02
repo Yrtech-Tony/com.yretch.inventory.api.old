@@ -6,17 +6,11 @@
     <edmx:Diagrams>
       <Diagram DiagramId="56697ce60e33400aa2380f012da5278b" Name="Diagram1">
         <EntityTypeShape EntityType="com.yrtech.inventoryModel.Answer" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="com.yrtech.inventoryModel.Note" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="com.yrtech.inventoryModel.Program" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="com.yrtech.inventoryModel.CarType" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="com.yrtech.inventoryModel.Note" Width="1.5" PointX="2.75" PointY="3.75" />
         <EntityTypeShape EntityType="com.yrtech.inventoryModel.Projects" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="com.yrtech.inventoryModel.RoleType" Width="1.5" PointX="4.75" PointY="4.75" />
-        <EntityTypeShape EntityType="com.yrtech.inventoryModel.RoleTypeProgram" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="com.yrtech.inventoryModel.Shop" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="com.yrtech.inventoryModel.UserInfo" Width="1.5" PointX="6.75" PointY="3.75" />
-        <EntityTypeShape EntityType="com.yrtech.inventoryModel.AnswerLog" Width="1.5" PointX="2.75" PointY="7.75" />
-        <EntityTypeShape EntityType="com.yrtech.inventoryModel.ProjectsLog" Width="1.5" PointX="4.75" PointY="7.75" />
-        <EntityTypeShape EntityType="com.yrtech.inventoryModel.ShopLog" Width="1.5" PointX="6.75" PointY="7.75" />
-        <EntityTypeShape EntityType="com.yrtech.inventoryModel.CarType" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="com.yrtech.inventoryModel.Shop" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="com.yrtech.inventoryModel.UserInfo" Width="1.5" PointX="6.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

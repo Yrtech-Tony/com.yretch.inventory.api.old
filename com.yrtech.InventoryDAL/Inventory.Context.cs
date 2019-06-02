@@ -26,16 +26,10 @@ namespace com.yrtech.InventoryDAL
         }
     
         public virtual DbSet<Answer> Answer { get; set; }
+        public virtual DbSet<CarType> CarType { get; set; }
         public virtual DbSet<Note> Note { get; set; }
-        public virtual DbSet<Program> Program { get; set; }
         public virtual DbSet<Projects> Projects { get; set; }
-        public virtual DbSet<RoleType> RoleType { get; set; }
-        public virtual DbSet<RoleTypeProgram> RoleTypeProgram { get; set; }
         public virtual DbSet<Shop> Shop { get; set; }
         public virtual DbSet<UserInfo> UserInfo { get; set; }
-        public virtual DbSet<AnswerLog> AnswerLog { get; set; }
-        public virtual DbSet<ProjectsLog> ProjectsLog { get; set; }
-        public virtual DbSet<ShopLog> ShopLog { get; set; }
-        public virtual DbSet<CarType> CarType { get; set; }
     }
 }

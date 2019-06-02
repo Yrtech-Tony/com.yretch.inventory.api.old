@@ -20,8 +20,14 @@ namespace com.yrtech.InventoryAPI.Service
             SqlParameter[] para = new SqlParameter[] { };
             Type t = typeof(Projects);
             string sql = "";
-            sql = @"SELECT ProjectCode,ProjectName
-                    FROM [Project]
+            sql = @"SELECT  [ProjectCode]
+                  ,[ProjectName]
+                  ,[InUserID]
+                  ,[InDateTime]
+                  ,[Year]
+                  ,[Quarter]
+                  ,[OrderNO]
+                    FROM [Projects]
                     WHERE 1=1 ORDER BY OrderNO DESC  
                     ";
             return db.Database.SqlQuery(t, sql, para).Cast<Projects>().ToList();
@@ -34,10 +40,16 @@ namespace com.yrtech.InventoryAPI.Service
         /// <returns></returns>
         public List<Shop> GetShop(string shopCode)
         {
+            if(shopCode==null)shopCode="";
             SqlParameter[] para = new SqlParameter[] {new SqlParameter("@ShopCode", shopCode)};
             Type t = typeof(Shop);
             string sql = "";
-            sql = @"SELECT *
+            sql = @"SELECT [ShopCode]
+                        ,[ShopName]
+                        ,[InUserID]
+                        ,[InDateTime]
+                        ,[Password]
+                        ,AreaCode
                       FROM [Shop]
                     WHERE  1=1 ";
           
