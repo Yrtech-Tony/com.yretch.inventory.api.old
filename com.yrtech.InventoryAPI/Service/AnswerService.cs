@@ -21,7 +21,7 @@ namespace com.yrtech.InventoryAPI.Service
         /// <param name="allChk"></param>
         /// <param name="vinCode"></param>
         /// <returns></returns>
-        public List<Answer> GetShopAnswerList(string projectCode, string shopCode,string allChk,string vinCode)
+        public List<Answer> GetShopAnswerList(string projectCode, string shopCode, string allChk, string vinCode)
         {
             if (allChk == null) allChk = "";
             if (vinCode == null) vinCode = "";
@@ -38,20 +38,21 @@ namespace com.yrtech.InventoryAPI.Service
             {
                 sql += " AND ShopCode = @ShopCode";
             }
-            if (allChk=="N") // 不是查询全部的时候，志查询未拍照的清单
+            if (allChk == "N") // 不是查询全部的时候，志查询未拍照的清单
             {
-                sql += " AND AddChk='N' AND (VinPhotoName IS NULL OR VinPhotoName='') AND (remark is null or remark='')";
+                sql += " AND AddChk='N' AND (PhotoName IS NULL OR PhotoName='') AND (remark is null or remark='')";
             }
             if (!string.IsNullOrEmpty(vinCode))
             {
                 sql += " AND VinCode LIKE '%'+@VinCode+'%'";
             }
+
             sql += " Order By vincode8";
             return db.Database.SqlQuery(t, sql, para).Cast<Answer>().ToList();
         }
         public void SaveShopAnswer(Answer answer)
         {
-            Answer findOne = db.Answer.Where(x => (x.ProjectCode == answer.ProjectCode&&x.ShopCode==answer.ShopCode&&answer.VinCode==x.VinCode)).FirstOrDefault();
+            Answer findOne = db.Answer.Where(x => (x.ProjectCode == answer.ProjectCode && x.ShopCode == answer.ShopCode && answer.VinCode == x.VinCode)).FirstOrDefault();
             if (findOne == null)
             {
                 answer.InDateTime = DateTime.Now;
