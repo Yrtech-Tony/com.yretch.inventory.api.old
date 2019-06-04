@@ -52,12 +52,13 @@ namespace com.yrtech.InventoryAPI.Service
         }
         public void SaveShopAnswer(Answer answer)
         {
-            Answer findOne = db.Answer.Where(x => (x.ProjectCode == answer.ProjectCode && x.ShopCode == answer.ShopCode && answer.VinCode == x.VinCode)).FirstOrDefault();
+            Answer findOne = db.Answer.Where(x => (x.ProjectCode == answer.ProjectCode && x.ShopCode == answer.ShopCode && x.VinCode==answer.VinCode)).FirstOrDefault();
             if (findOne == null)
             {
                 answer.InDateTime = DateTime.Now;
                 answer.VinCode8 = answer.VinCode.Substring(answer.VinCode.Length - 8);
                 answer.AddChk = "Y";
+                db.Answer.Add(answer);
             }
             else
             {

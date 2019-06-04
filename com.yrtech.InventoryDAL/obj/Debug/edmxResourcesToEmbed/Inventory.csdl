@@ -1,36 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="com.yrtech.inventoryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="Inventory" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Answer" EntityType="com.yrtech.inventoryModel.Answer" />
     <EntitySet Name="CarType" EntityType="com.yrtech.inventoryModel.CarType" />
     <EntitySet Name="Note" EntityType="com.yrtech.inventoryModel.Note" />
     <EntitySet Name="Projects" EntityType="com.yrtech.inventoryModel.Projects" />
     <EntitySet Name="Shop" EntityType="com.yrtech.inventoryModel.Shop" />
     <EntitySet Name="UserInfo" EntityType="com.yrtech.inventoryModel.UserInfo" />
+    <EntitySet Name="Answer" EntityType="com.yrtech.inventoryModel.Answer" />
   </EntityContainer>
-  <EntityType Name="Answer">
-    <Key>
-      <PropertyRef Name="ProjectCode" />
-      <PropertyRef Name="VinCode" />
-      <PropertyRef Name="ShopCode" />
-    </Key>
-    <Property Name="ProjectCode" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
-    <Property Name="VinCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="ShopCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="VinCode8" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="ModelName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="SubModelName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="StockAge" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="SaleFlag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="GradeNameCn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="ExteriorColor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="InteriorColor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="PhotoName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-    <Property Name="AddChk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="InUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="InDateTime" Type="DateTime" Precision="3" />
-  </EntityType>
   <EntityType Name="CarType">
     <Key>
       <PropertyRef Name="CarTypeCode" />
@@ -82,5 +59,28 @@
     <Property Name="InDateTime" Type="DateTime" Precision="3" />
     <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="MacAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="ProjectCode" />
+      <PropertyRef Name="VinCode" />
+      <PropertyRef Name="ShopCode" />
+    </Key>
+    <Property Name="ProjectCode" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="VinCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ShopCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VinCode8" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ModelName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SubModelName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StockAge" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SaleFlag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GradeNameCn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExteriorColor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InteriorColor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PhotoName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AddChk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InDateTime" Type="DateTime" Precision="3" />
   </EntityType>
 </Schema>
