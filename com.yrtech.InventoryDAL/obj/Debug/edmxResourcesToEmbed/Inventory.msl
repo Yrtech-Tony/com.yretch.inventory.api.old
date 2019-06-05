@@ -1,28 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="comyrtechinventoryModelStoreContainer" CdmEntityContainer="Inventory">
-    <EntitySetMapping Name="Answer">
-      <EntityTypeMapping TypeName="com.yrtech.inventoryModel.Answer">
-        <MappingFragment StoreEntitySet="Answer">
-          <ScalarProperty Name="InDateTime" ColumnName="InDateTime" />
-          <ScalarProperty Name="InUserID" ColumnName="InUserID" />
-          <ScalarProperty Name="AddChk" ColumnName="AddChk" />
-          <ScalarProperty Name="Remark" ColumnName="Remark" />
-          <ScalarProperty Name="PhotoName" ColumnName="PhotoName" />
-          <ScalarProperty Name="InteriorColor" ColumnName="InteriorColor" />
-          <ScalarProperty Name="ExteriorColor" ColumnName="ExteriorColor" />
-          <ScalarProperty Name="GradeNameCn" ColumnName="GradeNameCn" />
-          <ScalarProperty Name="SaleFlag" ColumnName="SaleFlag" />
-          <ScalarProperty Name="StockAge" ColumnName="StockAge" />
-          <ScalarProperty Name="SubModelName" ColumnName="SubModelName" />
-          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
-          <ScalarProperty Name="VinCode8" ColumnName="VinCode8" />
-          <ScalarProperty Name="ShopCode" ColumnName="ShopCode" />
-          <ScalarProperty Name="VinCode" ColumnName="VinCode" />
-          <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="CarType">
       <EntityTypeMapping TypeName="com.yrtech.inventoryModel.CarType">
         <MappingFragment StoreEntitySet="CarType">
@@ -76,6 +54,28 @@
           <ScalarProperty Name="RoleType" ColumnName="RoleType" />
           <ScalarProperty Name="PSW" ColumnName="PSW" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Answer">
+      <EntityTypeMapping TypeName="com.yrtech.inventoryModel.Answer">
+        <MappingFragment StoreEntitySet="Answer">
+          <ScalarProperty Name="InDateTime" ColumnName="InDateTime" />
+          <ScalarProperty Name="InUserID" ColumnName="InUserID" />
+          <ScalarProperty Name="AddChk" ColumnName="AddChk" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="PhotoName" ColumnName="PhotoName" />
+          <ScalarProperty Name="InteriorColor" ColumnName="InteriorColor" />
+          <ScalarProperty Name="ExteriorColor" ColumnName="ExteriorColor" />
+          <ScalarProperty Name="GradeNameCn" ColumnName="GradeNameCn" />
+          <ScalarProperty Name="SaleFlag" ColumnName="SaleFlag" />
+          <ScalarProperty Name="StockAge" ColumnName="StockAge" />
+          <ScalarProperty Name="SubModelName" ColumnName="SubModelName" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="VinCode8" ColumnName="VinCode8" />
+          <ScalarProperty Name="ShopCode" ColumnName="ShopCode" />
+          <ScalarProperty Name="VinCode" ColumnName="VinCode" />
+          <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

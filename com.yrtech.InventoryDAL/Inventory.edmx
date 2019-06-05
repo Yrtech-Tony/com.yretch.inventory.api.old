@@ -22,7 +22,7 @@
           <Property Name="GradeNameCn" Type="nvarchar" MaxLength="50" />
           <Property Name="ExteriorColor" Type="nvarchar" MaxLength="20" />
           <Property Name="InteriorColor" Type="nvarchar" MaxLength="20" />
-          <Property Name="PhotoName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhotoName" Type="nvarchar" MaxLength="500" />
           <Property Name="Remark" Type="nvarchar" MaxLength="500" />
           <Property Name="AddChk" Type="nvarchar" MaxLength="50" />
           <Property Name="InUserID" Type="nvarchar" MaxLength="50" />
@@ -93,36 +93,13 @@
     <edmx:ConceptualModels>
       <Schema Namespace="com.yrtech.inventoryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Inventory" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Answer" EntityType="com.yrtech.inventoryModel.Answer" />
           <EntitySet Name="CarType" EntityType="com.yrtech.inventoryModel.CarType" />
           <EntitySet Name="Note" EntityType="com.yrtech.inventoryModel.Note" />
           <EntitySet Name="Projects" EntityType="com.yrtech.inventoryModel.Projects" />
           <EntitySet Name="Shop" EntityType="com.yrtech.inventoryModel.Shop" />
           <EntitySet Name="UserInfo" EntityType="com.yrtech.inventoryModel.UserInfo" />
+          <EntitySet Name="Answer" EntityType="com.yrtech.inventoryModel.Answer" />
         </EntityContainer>
-        <EntityType Name="Answer">
-          <Key>
-            <PropertyRef Name="ProjectCode" />
-            <PropertyRef Name="VinCode" />
-            <PropertyRef Name="ShopCode" />
-          </Key>
-          <Property Name="ProjectCode" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="VinCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="ShopCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="VinCode8" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="ModelName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="SubModelName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StockAge" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="SaleFlag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="GradeNameCn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ExteriorColor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="InteriorColor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="PhotoName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="AddChk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="InUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="InDateTime" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityType Name="CarType">
           <Key>
             <PropertyRef Name="CarTypeCode" />
@@ -175,34 +152,35 @@
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MacAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Answer">
+          <Key>
+            <PropertyRef Name="ProjectCode" />
+            <PropertyRef Name="VinCode" />
+            <PropertyRef Name="ShopCode" />
+          </Key>
+          <Property Name="ProjectCode" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="VinCode" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ShopCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VinCode8" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ModelName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SubModelName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StockAge" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SaleFlag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GradeNameCn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ExteriorColor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="InteriorColor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PhotoName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AddChk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="comyrtechinventoryModelStoreContainer" CdmEntityContainer="Inventory">
-          <EntitySetMapping Name="Answer">
-            <EntityTypeMapping TypeName="com.yrtech.inventoryModel.Answer">
-              <MappingFragment StoreEntitySet="Answer">
-                <ScalarProperty Name="InDateTime" ColumnName="InDateTime" />
-                <ScalarProperty Name="InUserID" ColumnName="InUserID" />
-                <ScalarProperty Name="AddChk" ColumnName="AddChk" />
-                <ScalarProperty Name="Remark" ColumnName="Remark" />
-                <ScalarProperty Name="PhotoName" ColumnName="PhotoName" />
-                <ScalarProperty Name="InteriorColor" ColumnName="InteriorColor" />
-                <ScalarProperty Name="ExteriorColor" ColumnName="ExteriorColor" />
-                <ScalarProperty Name="GradeNameCn" ColumnName="GradeNameCn" />
-                <ScalarProperty Name="SaleFlag" ColumnName="SaleFlag" />
-                <ScalarProperty Name="StockAge" ColumnName="StockAge" />
-                <ScalarProperty Name="SubModelName" ColumnName="SubModelName" />
-                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
-                <ScalarProperty Name="VinCode8" ColumnName="VinCode8" />
-                <ScalarProperty Name="ShopCode" ColumnName="ShopCode" />
-                <ScalarProperty Name="VinCode" ColumnName="VinCode" />
-                <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="CarType">
             <EntityTypeMapping TypeName="com.yrtech.inventoryModel.CarType">
               <MappingFragment StoreEntitySet="CarType">
@@ -256,6 +234,28 @@
                 <ScalarProperty Name="RoleType" ColumnName="RoleType" />
                 <ScalarProperty Name="PSW" ColumnName="PSW" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Answer">
+            <EntityTypeMapping TypeName="com.yrtech.inventoryModel.Answer">
+              <MappingFragment StoreEntitySet="Answer">
+                <ScalarProperty Name="InDateTime" ColumnName="InDateTime" />
+                <ScalarProperty Name="InUserID" ColumnName="InUserID" />
+                <ScalarProperty Name="AddChk" ColumnName="AddChk" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="PhotoName" ColumnName="PhotoName" />
+                <ScalarProperty Name="InteriorColor" ColumnName="InteriorColor" />
+                <ScalarProperty Name="ExteriorColor" ColumnName="ExteriorColor" />
+                <ScalarProperty Name="GradeNameCn" ColumnName="GradeNameCn" />
+                <ScalarProperty Name="SaleFlag" ColumnName="SaleFlag" />
+                <ScalarProperty Name="StockAge" ColumnName="StockAge" />
+                <ScalarProperty Name="SubModelName" ColumnName="SubModelName" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+                <ScalarProperty Name="VinCode8" ColumnName="VinCode8" />
+                <ScalarProperty Name="ShopCode" ColumnName="ShopCode" />
+                <ScalarProperty Name="VinCode" ColumnName="VinCode" />
+                <ScalarProperty Name="ProjectCode" ColumnName="ProjectCode" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

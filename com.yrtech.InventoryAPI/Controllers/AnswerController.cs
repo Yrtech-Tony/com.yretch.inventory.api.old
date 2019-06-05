@@ -12,6 +12,8 @@ using System.Net;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
+using Infragistics.Documents.Excel;
+using com.yrtech.InventoryAPI.Controllers;
 
 namespace com.yrtech.SurveyAPI.Controllers
 {
@@ -38,7 +40,7 @@ namespace com.yrtech.SurveyAPI.Controllers
         }
         [HttpPost]
         [Route("Answer/SaveShopAnswer")]
-        public APIResult SaveShopAnswer([FromBody]Answer answer)
+        public APIResult SaveShopAnswer(Answer answer)
         {
             try
             {
@@ -50,6 +52,7 @@ namespace com.yrtech.SurveyAPI.Controllers
                 return new APIResult() { Status = false, Body = ex.Message.ToString() };
             }
         }
+<<<<<<< HEAD
 
         [HttpGet]
         [Route("Answer/DownloadAnswerList")]
@@ -59,6 +62,18 @@ namespace com.yrtech.SurveyAPI.Controllers
             {
                 List<Answer> answerList = answerService.GetShopAnswerList(projectCode, shopCode, "Y", "");
                 return new APIResult() { Status = true, Body = CommonHelper.Encode(answerList) };
+=======
+       
+        [HttpGet]
+        [Route("Answer/DownLoadShopAnswerList")]
+        public APIResult DownLoadShopAnswerList(string projectCode, string shopCode)
+        {
+            try
+            {
+                CommonController commonController = new CommonController();
+                commonController.DownloadReport(projectCode, shopCode);
+                return new APIResult() { Status = true, Body = "" };
+>>>>>>> 9ef8911b04c9673e0429653e7da0fd8f5a3a3ac4
             }
             catch (Exception ex)
             {

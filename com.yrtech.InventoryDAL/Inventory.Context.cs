@@ -25,11 +25,11 @@ namespace com.yrtech.InventoryDAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Answer> Answer { get; set; }
         public virtual DbSet<CarType> CarType { get; set; }
         public virtual DbSet<Note> Note { get; set; }
         public virtual DbSet<Projects> Projects { get; set; }
         public virtual DbSet<Shop> Shop { get; set; }
         public virtual DbSet<UserInfo> UserInfo { get; set; }
+        public virtual DbSet<Answer> Answer { get; set; }
     }
 }
