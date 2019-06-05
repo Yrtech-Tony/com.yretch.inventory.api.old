@@ -159,3 +159,5 @@ C:\Workspace\com.yrtech.InventoryAPI-Old1\com.yrtech.InventoryAPI\bin\zh-Hans\Sy
 C:\Workspace\com.yrtech.InventoryAPI-Old1\com.yrtech.InventoryAPI\obj\Debug\com.yrtech.InventoryAPI.csprojResolveAssemblyReference.cache
 C:\Workspace\com.yrtech.InventoryAPI-Old1\com.yrtech.InventoryAPI\obj\Debug\com.yrtech.InventoryAPI.dll
 C:\Workspace\com.yrtech.InventoryAPI-Old1\com.yrtech.InventoryAPI\obj\Debug\com.yrtech.InventoryAPI.pdb
+D:\hhtprivate\myprojects\com.yretch.inventoryAPIOld\com.yrtech.InventoryAPI\obj\Debug\com.yrtech.InventoryAPI.dll
+D:\hhtprivate\myprojects\com.yretch.inventoryAPIOld\com.yrtech.InventoryAPI\obj\Debug\com.yrtech.InventoryAPI.pdb

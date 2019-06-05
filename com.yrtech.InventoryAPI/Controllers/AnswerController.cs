@@ -50,5 +50,21 @@ namespace com.yrtech.SurveyAPI.Controllers
                 return new APIResult() { Status = false, Body = ex.Message.ToString() };
             }
         }
+
+        [HttpGet]
+        [Route("Answer/DownloadAnswerList")]
+        public APIResult DownloadAnswerList(string projectCode, string shopCode)
+        {
+            try
+            {
+                List<Answer> answerList = answerService.GetShopAnswerList(projectCode, shopCode, "Y", "");
+                return new APIResult() { Status = true, Body = CommonHelper.Encode(answerList) };
+            }
+            catch (Exception ex)
+            {
+                return new APIResult() { Status = false, Body = ex.Message.ToString() };
+            }
+
+        }
     }
 }
