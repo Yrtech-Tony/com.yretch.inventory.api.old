@@ -38,7 +38,7 @@ namespace com.yrtech.InventoryAPI.Service
             {
                 sql += " AND ShopCode = @ShopCode";
             }
-            if (allChk == "N") // 不是查询全部的时候，志查询未拍照的清单
+            if (allChk == "N") // 不是查询全部的时候，只查询未拍照的清单
             {
                 sql += " AND AddChk='N' AND (PhotoName IS NULL OR PhotoName='') AND (remark is null or remark='')";
             }
