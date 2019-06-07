@@ -52,6 +52,17 @@ namespace com.yrtech.SurveyAPI.Controllers
                 return new APIResult() { Status = false, Body = ex.Message.ToString() };
             }
         }
+<<<<<<< HEAD
+
+        [HttpGet]
+        [Route("Answer/DownloadAnswerList")]
+        public APIResult DownloadAnswerList(string projectCode, string shopCode)
+        {
+            try
+            {
+                List<Answer> answerList = answerService.GetShopAnswerList(projectCode, shopCode, "Y", "");
+                return new APIResult() { Status = true, Body = CommonHelper.Encode(answerList) };
+=======
        
         [HttpGet]
         [Route("Answer/DownLoadShopAnswerList")]
@@ -62,6 +73,7 @@ namespace com.yrtech.SurveyAPI.Controllers
                 CommonController commonController = new CommonController();
                 commonController.DownloadReport(projectCode, shopCode);
                 return new APIResult() { Status = true, Body = "" };
+>>>>>>> 9ef8911b04c9673e0429653e7da0fd8f5a3a3ac4
             }
             catch (Exception ex)
             {
