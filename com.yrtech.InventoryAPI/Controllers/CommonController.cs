@@ -20,6 +20,12 @@ namespace com.yrtech.InventoryAPI.Controllers
         {
             return View();
         }
+        
+        public void DownloadAnswerList(string projectCode, string shopCode)
+        {
+            DownloadReport(projectCode, shopCode);
+        }
+
         public void DownloadExcel(string excelName, string filePath, bool isDeleteAfterDownload = false)
         {
             FileStream stream = new FileStream(filePath, FileMode.Open);
@@ -44,6 +50,7 @@ namespace com.yrtech.InventoryAPI.Controllers
                 System.IO.File.Delete(filePath);
             }
         }
+
         public void DownloadReport(string projectCode, string shopCode)
         {
             string shopName = shopCode;
