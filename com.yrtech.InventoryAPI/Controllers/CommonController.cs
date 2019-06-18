@@ -32,7 +32,7 @@ namespace com.yrtech.InventoryAPI.Controllers
             if (stream == null) return;
             if (string.IsNullOrEmpty(excelName))
             {
-                excelName = "GridtoExcel" + "_" + DateTime.Now.ToString("yyyyMMddHHmmss");
+                excelName = "excel" + "_" + DateTime.Now.ToString("yyyyMMddHHmmssfff");
             }
             byte[] bytes = new byte[(int)stream.Length];
             stream.Position = 0;
@@ -74,33 +74,33 @@ namespace com.yrtech.InventoryAPI.Controllers
             foreach (Answer item in listN)
             {
                 //序号
-                sheet.GetCell("A" + (rowIndex + 1)).Value = rowIndex.ToString();
+                sheet.GetCell("A" + (rowIndex + 6)).Value = rowIndex.ToString();
                 //经销商名称
-                sheet.GetCell("B" + (rowIndex + 1)).Value = shopName;
+                sheet.GetCell("B" + (rowIndex + 6)).Value = shopName;
                 //VinCode
-                sheet.GetCell("C" + (rowIndex + 1)).Value = item.VinCode;
+                sheet.GetCell("C" + (rowIndex + 6)).Value = item.VinCode;
                 //ModelName
-                sheet.GetCell("D" + (rowIndex + 1)).Value = item.ModelName;
+                sheet.GetCell("D" + (rowIndex + 6)).Value = item.ModelName;
                 //SubModelName
-                sheet.GetCell("E" + (rowIndex + 1)).Value = item.SubModelName;
+                sheet.GetCell("E" + (rowIndex + 6)).Value = item.SubModelName;
                 //Stockage
-                sheet.GetCell("F" + (rowIndex + 1)).Value = item.StockAge;
+                sheet.GetCell("F" + (rowIndex + 6)).Value = item.StockAge;
                 //SaleFlag
-                sheet.GetCell("G" + (rowIndex + 1)).Value = item.SaleFlag;
+                sheet.GetCell("G" + (rowIndex + 6)).Value = item.SaleFlag;
                 // 在库与否
                 if (string.IsNullOrEmpty(item.PhotoName))
                 {
-                    sheet.GetCell("H" + (rowIndex + 1)).Value = "";
-                    sheet.GetCell("I" + (rowIndex + 1)).Value = "1";
-                    sheet.GetCell("J" + (rowIndex + 1)).Value = "无";
+                    sheet.GetCell("H" + (rowIndex + 6)).Value = "";
+                    sheet.GetCell("I" + (rowIndex + 6)).Value = "1";
+                    sheet.GetCell("J" + (rowIndex + 6)).Value = "无";
                 }
                 else
                 {
-                    sheet.GetCell("H" + (rowIndex + 1)).Value = "1";
-                    sheet.GetCell("I" + (rowIndex + 1)).Value = "";
-                    sheet.GetCell("J" + (rowIndex + 1)).Value = "有";
+                    sheet.GetCell("H" + (rowIndex + 6)).Value = "1";
+                    sheet.GetCell("I" + (rowIndex + 6)).Value = "";
+                    sheet.GetCell("J" + (rowIndex + 6)).Value = "有";
                 }
-                sheet.GetCell("K" + (rowIndex + 1)).Value = item.Remark;
+                sheet.GetCell("K" + (rowIndex + 6)).Value = item.Remark;
                 rowIndex++;
             }
             #endregion
@@ -109,13 +109,13 @@ namespace com.yrtech.InventoryAPI.Controllers
             foreach (Answer item in listY)
             {
                 //序号
-                sheet1.GetCell("A" + (rowIndex1 + 1)).Value = rowIndex1.ToString();
+                sheet1.GetCell("A" + (rowIndex1 + 6)).Value = rowIndex1.ToString();
                 //经销商名称
-                sheet1.GetCell("B" + (rowIndex1 + 1)).Value = shopName;
+                sheet1.GetCell("B" + (rowIndex1 + 6)).Value = shopName;
                 //VinCode
-                sheet1.GetCell("C" + (rowIndex1 + 1)).Value = item.VinCode;
+                sheet1.GetCell("C" + (rowIndex1 + 6)).Value = item.VinCode;
                 //ModelName
-                sheet1.GetCell("D" + (rowIndex1 + 1)).Value = item.ModelName;
+                sheet1.GetCell("D" + (rowIndex1 + 6)).Value = item.ModelName;
                 //PhotoName
                 string photoName = "";
                 string[] photoNameList = item.PhotoName.Split(';');
@@ -127,15 +127,15 @@ namespace com.yrtech.InventoryAPI.Controllers
                 {
                     photoName = item.VinCode + ".jpg;" + item.VinCode + "_车尾.jpg;" + item.VinCode + "_销售发票.jpg";
                 }
-                sheet1.GetCell("E" + (rowIndex1 + 1)).Value = photoName;
+                sheet1.GetCell("E" + (rowIndex1 + 6)).Value = photoName;
                 //Remark
-                sheet1.GetCell("F" + (rowIndex1 + 1)).Value = item.Remark;
+                sheet1.GetCell("F" + (rowIndex1 + 6)).Value = item.Remark;
 
                 rowIndex1++;
             }
             #endregion
             //保存excel文件
-            string fileName = shopName + DateTime.Now.ToString("yyyyMMddHHmmss") + ".xls";
+            string fileName = shopName + DateTime.Now.ToString("yyyyMMddHHmmssfff") + ".xls";
             string dirPath = Server.MapPath("~") + @"\Temp\";
             DirectoryInfo dir = new DirectoryInfo(dirPath);
             if (!dir.Exists)

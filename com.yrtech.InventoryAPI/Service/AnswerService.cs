@@ -64,6 +64,7 @@ namespace com.yrtech.InventoryAPI.Service
             {
                 findOne.PhotoName = answer.PhotoName;
                 findOne.Remark = answer.Remark;
+                findOne.ModelName = answer.ModelName;
             }
             db.SaveChanges();
         }
